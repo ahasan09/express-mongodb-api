@@ -65,7 +65,7 @@ mongoSchema.methods.generateAuthToken = function() {
 
 const User = mongoose.model("User", mongoSchema);
 
-const clientSchema = {
+const clientSchema = Joi.object({
   name: Joi.string()
     .min(5)
     .max(50)
@@ -84,11 +84,11 @@ const clientSchema = {
     .regex(/^[a-zA-Z0-9]{3,30}$/)
     .required()
     .trim(),
-  created: Joi.date().default(Date.now, "time of creation")
-};
+  created: Joi.date().default(Date.now)
+});
 
 function validateUser(user) {
-  return Joi.validate(user, clientSchema);
+  return clientSchema.validate(user);
 }
 
 exports.User = User;

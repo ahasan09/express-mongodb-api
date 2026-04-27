@@ -43,7 +43,7 @@ const mongoSchema = {
   }
 };
 
-const clientSchema = {
+const clientSchema = Joi.object({
   firstname: Joi.string()
     .min(2)
     .max(255)
@@ -65,14 +65,14 @@ const clientSchema = {
     .max(100000000)
     .when("age", { is: "15+", then: Joi.required() }),
   address: Joi.string(),
-  created: Joi.date().default(Date.now, "time of creation"),
+  created: Joi.date().default(Date.now),
   tags: Joi.array()
-};
+});
 
 const Customer = mongoose.model("Customer", new mongoose.Schema(mongoSchema));
 
 function validateCustomer(customer) {
-  return Joi.validate(customer, clientSchema);
+  return clientSchema.validate(customer);
 }
 
 exports.Customer = Customer;

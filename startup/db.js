@@ -10,12 +10,7 @@ module.exports = function() {
   }
 
   //"mongodb://localhost/customer_management";
-  mongoose.connect(mongoDb, {
-    useCreateIndex: true,
-    useNewUrlParser: true
-  });
-  // Get Mongoose to use the global promise library
-  mongoose.Promise = global.Promise;
+  mongoose.connect(mongoDb);
   //Get the default connection
   var db = mongoose.connection;
   db.on("connected", () =>

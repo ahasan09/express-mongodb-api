@@ -8,27 +8,25 @@
     "start": "node index.js"
   },
   "engines": {
-    "node": "10.15.0"
+    "node": ">=22"
   },
   "keywords": [],
   "author": "Raju Hasan",
   "license": "ISC",
   "dependencies": {
-    "bcrypt": "^3.0.4",
-    "compression": "^1.7.4",
-    "config": "^3.0.1",
-    "express": "^4.16.4",
-    "express-async-errors": "^3.1.1",
-    "helmet": "^3.16.0",
-    "joi": "^14.3.1",
-    "joi-password-complexity": "^2.0.1",
-    "jsonwebtoken": "^8.5.0",
-    "lodash": "^4.17.11",
-    "mongoose": "^5.4.16",
-    "winston": "^3.2.1",
-    "winston-mongodb": "^5.0.0"
+    "bcrypt": "^6.0.0",
+    "compression": "^1.8.1",
+    "config": "^4.4.1",
+    "express": "^5.2.1",
+    "helmet": "^8.1.0",
+    "joi": "^18.1.2",
+    "jsonwebtoken": "^9.0.3",
+    "lodash": "^4.18.1",
+    "mongoose": "^9.5.0",
+    "winston": "^3.19.0",
+    "winston-mongodb": "^7.0.1"
   },
   "devDependencies": {
-    "jshint": "^2.10.1"
+    "jshint": "^2.13.6"
   }
 }
