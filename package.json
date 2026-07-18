@@ -1,5 +1,5 @@
 {
-  "name": "node-app",
+  "name": "express-mongodb-api",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
